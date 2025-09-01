@@ -24,7 +24,7 @@ Hi there 👋, I’m an undergraduate Systems Engineering student from Peru 🇵
 ✔ Ask me anything within my domain—I’ll be happy to help! 😉
 
 Outside tech: I enjoy 📖 reading, 🎵 music, and 🌍 exploring new ideas.
-- 📫 Reach out to me at: <a href="alen.b45112@gmail.com"> Send me an email"</a>
+- 📫 Reach out to me at: <a href="mailto:alen.b45112@gmail.com"> Send me an email"</a>
 
 <h1 align="center">My Skills Include</h1>
 
@@ -78,8 +78,8 @@ Outside tech: I enjoy 📖 reading, 🎵 music, and 🌍 exploring new ideas.
    <i>Ethical hacking is not about breaking systems, but about strengthening them turning vulnerabilities into shields.</i>
    <br>
 <br>	
-<a target="_blank" href="https://www.linkedin.com/in/birunthaban-sarventhiran/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white"></img></a>
-<a target="_blank" href="mailto:sbirunthaban007@gmail.com"><img src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=Gmail&logoColor=white"></img></a>
+<a target="_blank" href=""><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white"></img></a>
+<a target="_blank" href="mailto:alen.b45112@gmail.com"><img src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=Gmail&logoColor=white"></img></a>
 <br>
 </p>
 <p align="center">
