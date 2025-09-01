@@ -1,8 +1,12 @@
 <h1 align="center">Hi , I'm Alen <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"></h1>
 <p align="center">
-<img align="right" width=300px alt="Unicorn" src="https://c.tenor.com/GN73MKBawZYAAAAi/busy-cute.gif" />
 
 <img src="https://media.giphy.com/media/ObNTw8Uzwy6KQ/giphy.gif" width="30px">&nbsp;***About me***
+
+<img align="right" alt="Unicorn" 
+src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGdxc2ttOTZvNzQwNmt5cHNsa2h2Zmt2a3VtZnFyZzlodWV5dHVmMSZlcD12MV9faW50ZXJuYWxfZ2lmX2J5X2lkJmN0PWc/qgQUggAC3Pfv687qPC/giphy.gif" 
+style="width:300px;"/>
+
 <p align="justify">
 I am an undergraduate Systems Engineering student at the Universidad Nacional del Centro del Perú.
 I specialize in HTML, CSS, JavaScript, Cybersecurity, Linux, and Python, with a strong interest in Web Development, Database Management, and Information Security.
