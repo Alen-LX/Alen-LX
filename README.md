@@ -22,9 +22,10 @@ Hi there 👋, I’m an undergraduate Systems Engineering student from Peru 🇵
 Outside tech: I enjoy 📖 reading, 🎵 music, and 🌍 exploring new ideas.
 - 📫 Reach out to me at: <a href="alen.b45112@gmail.com"> Send me an email"</a>
 
-## My Skills Include
+<h1 align="center">My Skills Include</h1>
 
-<h4> Languages </h4>
+<h4 align ="center"> Languages </h4>
+<p align="center">
 <span> 
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
@@ -32,8 +33,9 @@ Outside tech: I enjoy 📖 reading, 🎵 music, and 🌍 exploring new ideas.
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white">
   <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54">
 </span>
-
-<h4> Operating System </h4>
+</p>
+<h4 align ="center"> Operating System </h4>
+<p align="center">
 <span>
   <img src="https://img.shields.io/badge/Kali-268BEE?style=for-the-badge&logo=kalilinux&logoColor=white">
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black">
@@ -41,24 +43,31 @@ Outside tech: I enjoy 📖 reading, 🎵 music, and 🌍 exploring new ideas.
   <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white">
 
 </span>
-
-<h4> Frameworks </h4>
+</p>
+<h4 align ="center"> FrameWorks </h4>
+<p align="center">
 <span>
   <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white">
   <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white">
   <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
 </span>
+</p>
 
-<h4> Databases </h4>
+<h4 align ="center"> DataBase </h4>
+<p align="center">
 <span>
   <img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white">
   <img src="https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white)">
 </span>
+</p>
 
-<h4> IDE </h4>
+<h4 align ="center"> IDE </h4>
+<p align="center">
 <span>
 <img src="https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white">
 <img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white">
+</span>
+</p>
 
 <hr>
 <p align="center">
@@ -68,4 +77,8 @@ Outside tech: I enjoy 📖 reading, 🎵 music, and 🌍 exploring new ideas.
 <a target="_blank" href="https://www.linkedin.com/in/birunthaban-sarventhiran/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white"></img></a>
 <a target="_blank" href="mailto:sbirunthaban007@gmail.com"><img src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=Gmail&logoColor=white"></img></a>
 <br>
+</p>
+<p align="center">
+  <img  src="https://raw.githubusercontent.com/Elanza-48/Elanza-48/main/resources/img/github-contribution-grid-snake.svg"
+    alt="example" />
 </p>
