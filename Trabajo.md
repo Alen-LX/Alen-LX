@@ -8,3 +8,4 @@ En otras palabras, un Web Worker funciona como un “trabajador” independiente
 
 **Externo (external)**
    
+<p align="justify">
