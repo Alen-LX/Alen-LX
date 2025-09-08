@@ -146,7 +146,7 @@ En cambio, los Web Workers funcionan como ayudantes que trabajan en segundo plan
 
  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ46v-XvAruQJu0MJ47JttB4XDLmPi6xkEZOw&s" width="60" align="right">
  
-## Alto Rendimiento en JavaScript Avanzado 
+## ALTO RENDIMIENTO EN JAVASCRIPT
 <p align="justify">
 JavaScript es un lenguaje dinámico y flexible, ampliamente adoptado para crear aplicaciones web interactivas. Sin embargo, su naturaleza hace que sea propenso a problemas de rendimiento en entornos complejos. Por ello, comprender y aplicar técnicas avanzadas de optimización es esencial para mantener aplicaciones eficientes y escalables (Vepsäläinen et al., 2024)
 </p>
