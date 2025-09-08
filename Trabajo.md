@@ -144,6 +144,55 @@ En cambio, los Web Workers funcionan como ayudantes que trabajan en segundo plan
   <img src="https://bitsofco.de/img/AfltGEBT6F-566.jpeg" width="400">
 </p>
 
+ <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ46v-XvAruQJu0MJ47JttB4XDLmPi6xkEZOw&s" width="60" align="right">
+ 
+## Alto Rendimiento en JavaScript Avanzado 
+<p align="justify">
+JavaScript es un lenguaje dinámico y flexible, ampliamente adoptado para crear aplicaciones web interactivas. Sin embargo, su naturaleza hace que sea propenso a problemas de rendimiento en entornos complejos. Por ello, comprender y aplicar técnicas avanzadas de optimización es esencial para mantener aplicaciones eficientes y escalables (Vepsäläinen et al., 2024)
+</p>
+
+2. ¿Qué significa “alto rendimiento”?
+
+Se refiere a lograr tiempos de carga rápidos, ejecución fluida, bajo uso de CPU/memoria y experiencia de usuario sin demoras perceptibles. Optimizar JavaScript no es solo escribir código más rápido, sino también reducir recursos utilizados y evitar cuellos de botella (Vepsäläinen et al., 2024) 
+
+3. Técnicas avanzadas de optimización
+   
+3.1 Eliminación de código muerto ("dead code")
+
+Muchas páginas cargan librerías o funciones que no usan realmente en producción. Según Kupoluyi et al. (2021), aproximadamente el 70 % de las funciones en una página promedio no se ejecutan y eliminarlas puede reducir hasta un 60 % el tamaño de descarga, acelerando el tiempo de carga en un 25–30 % 
+
+3.2 Optimización JIT y compilación especializada
+
+Al trabajar con motores JavaScript modernos, técnicas como el typed object shapes y la especialización de bloques básicos permiten reducir pruebas de tipo dinámicas e incrementar la velocidad de ejecución en alrededor de un 25 % (Chevalier-Boisvert & Feeley, 2015) 
+
+3.3 Descomposición de tareas largas
+
+Dividir tareas largas en fragmentos más cortos evita bloquear el main thread. Según MDN (2025), esto mejora significativamente la fluidez de la interfaz al evitar interrupciones perceptibles durante la ejecución del código pesado 
+
+3.4 Limpieza de solicitudes y minificación
+
+Reducir el número de archivos JavaScript y minificarlos (eliminar espacio, comentarios, variables innecesarias) disminuye la latencia de carga y el procesamiento inicial con impacto directo en rendimiento (Microsoft, 2023) 
+
+3.5 Uso de analíticas y métricas de rendimiento
+
+Medir es el primer paso para optimizar. Herramientas como Lighthouse y las DevTools del navegador permiten detectar qué scripts tardan más en cargar, qué funciones generan repaints o delays, y qué fragmentos conviene refactorizar (Vepsäläinen et al., 2024)
+
+4. Beneficios del alto rendimiento
+
+Mejora experiencia de usuario: interacciones rápidas y sin bloqueos, especialmente en dispositivos móviles o con red lenta.
+
+Eficiencia de recursos: menos CPU, memoria y ancho de banda gastados.
+
+Ventaja competitiva: páginas más rápidas retienen mejor a los usuarios y mejoran métricas de negocio.
+
+5. Limitaciones y consideraciones
+
+Complejidad técnica: aplicar técnicas como eliminación de código muerto o especialización de JIT requiere herramientas avanzadas o conocimiento profundo de compiladores y análisis estático.
+
+Riesgo de errores: eliminar funciones sin pruebas exhaustivas puede romper funcionalidades invisibles.
+
+Compatibilidad: algunas optimizaciones avanzadas dependen de navegadores modernos y pueden no aplicarse en todos los entornos.
+
 ## 8\. Conclusión
 <p align="justify">
 Los Web Workers se han convertido en una herramienta muy útil para las aplicaciones web modernas, sobre todo cuando se necesita trabajar con procesos intensivos sin afectar la experiencia del usuario. Gracias a ellos, las páginas pueden ejecutar múltiples tareas al mismo tiempo: el usuario sigue navegando, clicando o escribiendo, mientras los cálculos pesados se realizan aparte.
@@ -154,3 +203,24 @@ Aunque presentan algunas limitaciones, como no poder acceder directamente al DOM
 <p align="justify">
 En resumen, los Web Workers son un aliado clave para los desarrolladores que buscan mejorar tanto el rendimiento como la usabilidad de sus proyectos web, especialmente en aplicaciones que manejan datos grandes, gráficos o requieren multitarea de forma constante.
 </p>
+<p align="justify">
+El alto rendimiento en JavaScript avanzado se apoya en técnicas que van más allá de mejorar un bucle o usar async. Se trata de medir, identificar cuellos de botella y usar patrones sofisticados como eliminación de dead code, optimización de motores JIT, y fragmentación de tareas. Aunque requieren trabajo adicional, estos enfoques devuelven enormes beneficios en velocidad, experiencia y eficiencia. Aplicar estos métodos posiciona tus aplicaciones como más robustas, escalables y amigables para el usuario.
+</p>
+
+## 7\. Referencia
+-	Kaluvakuri, S., & Vadiyala, V. R. (2016). Harnessing the potential of CSS: An exhaustive reference for web styling. Engineering International, 4(2), 95–110. https://doi.org/10.18034/ei.v4i2.682
+-	World Wide Web Consortium (W3C), Selectors Level 3. W3C Recommendation, 2018. [Online]. Available: https://www.w3.org/TR/selectors-3/
+-	K. J. Grant, CSS in Depth. Shelter Island, NY: Manning Publications, 2017. [Online]. Available: https://www.manning.com/books/css-in-depth
+-	M. Haverbeke, Eloquent JavaScript: A Modern Introduction to Programming, 3rd ed. San Francisco, CA: No Starch Press, 2018. [Online]. Available: https://eloquentjavascript.net/
+-	MDN Web Docs, Specificity - CSS cascade. Mozilla Developer Network, 2024. [Online]. Available: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity
+-	FreeCodeCamp, What is CSS Specificity?, 2021. [Online]. Available: https://www.freecodecamp.org/news/what-is-css-specificity/
+-	GeeksforGeeks, Explain the concept of specificity in CSS, 2022. [Online]. Available: https://www.geeksforgeeks.org/css/explain-the-concept-of-specificity-in-css/
+-	MDN Web Docs, CSS: Unidades de medida. Mozilla Developer Network, s.f. [Online]. Available: https://developer.mozilla.org/es/docs/Web/CSS/length 
+-	MDN Web Docs. (2024). Positioning in CSS. Mozilla Developer Network. https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning 
+-	Jesusda. (s. f.). Introducción a CSS. Recuperado de https://www.jesusda.com/docs/ebooks/introduccion_css.pdf
+-	Ventics. (s. f.). Margen y relleno en CSS. Recuperado de https://ventics.com/margen-y-relleno-en-css/ 
+-	W3Schools. (s. f.). Modelo de caja en CSS. W3Schools. Recuperado de https://www-w3schools-com.translate.goog/css/css_boxmodel.asp?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc 
+-	George, L. (2020, junio 10). The theory of the box model: Margin and padding explained. Hashnode. Recuperado de https://laviedegeorge.hashnode.dev/the-theory-of-the-box-model-margin-and-padding-explained-ck88j5cgx00067rs1g4b1b6v5 
+-	MDN Web Docs. (s. f.). Introduction to the CSS box model. Mozilla. Recuperado de https://developer-mozilla-org.translate.goog/en-US/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=sge#:~:text=Every%20box%20is%20composed%20of,border%20edge%2C%20and%20margin%20edge 
+-	Oregoom. (s. f.). CSS color. Oregoom. Recuperado de https://oregoom.com/css/color/
+
