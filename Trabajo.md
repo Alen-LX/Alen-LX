@@ -27,12 +27,25 @@ En otras palabras, un Web Worker funciona como un “trabajador” independiente
 >Los Service Workers son especializados: actúan como intermediarios entre la aplicación web, el navegador y la red. Funcionan en segundo plano incluso cuando la página está cerrada, gestionan el cacheado de recursos, permiten que la aplicación funcione offline y habilitan funciones como notificaciones push. Son fundamentales en el desarrollo de Progressive Web Apps (PWA) (Wikipedia, 2025; Krauweel & Jongmans, 2017).
 ></div> 
 
-<div style="display: table; margin: auto;">
+<div style="width:600px; margin:auto;">
   <img src="https://images.ctfassets.net/23aumh6u8s0i/1hW4Sr1YsDa5mCXBfVaNWb/e875abf8ef8d19354b6cc6a24208a9b9/Performing-Tasks-With-and-Without-Web-Worker" 
-       alt="FUENTE: introduction to webworkers" width="600"><br>
-  <span style="font-size:12px; display: block; text-align: left;">
-    FUENTE: tutorial.bernatcortina.cat
+       alt="FUENTE: introduction to webworkers" width="550"><br>
+  <span style="font-size:12px; display:block; text-align:left;">
+    FUENTE: Introduction to Web Workers
   </span>
 </div>
+
+## Características principales de los Web Workers
+- **Ejecución en paralelo:**  Funcionan en hilos independientes, lo que permite procesar tareas largas sin congelar la interfaz (Simpson, 2023).
+  
+- **Comunicación mediante mensajes:** La interacción con el hilo principal se realiza mediante postMessage y onmessage, lo cual es totalmente asincrónico (W3C, 2009).
+- **Entorno aislado:** No comparten el contexto global (como window o document) con el hilo principal (Isaacs & Burns, 2013).
+  
+- **Acceso a APIs específicas:** Aunque no tienen acceso al DOM, pueden consultar recursos como fetch, XMLHttpRequest, IndexedDB y temporizadores (setTimeout, setInterval) (MDN, 2025).
+  
+- **Política de seguridad (Same-Origin Policy):** Sólo pueden ejecutar scripts del mismo origen, para evitar riesgos de seguridad (W3C, 2009).
+
+
+ 
 
 
