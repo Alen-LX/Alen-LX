@@ -17,12 +17,12 @@ En otras palabras, un Web Worker funciona como un “trabajador” independiente
 >Los Dedicated Workers son aquellos que están vinculados a una única página o script. Una vez que la página se cierra, el worker también finaliza. Son ideales       para tareas exclusivas de una sola aplicación y ayudan a mantener separadas las operaciones intensivas del hilo principal (Isaacs & Burns, 2013).
 ></div>  
 
-### 9\.3 Shared Worker
+### 9\.2\.2 Shared Worker
 ><div align="justify">
 >Los Shared Workers permiten que múltiples contextos (pestañas, iframes o scripts) del mismo origen compartan un único worker. Esto es útil para coordenar datos o procesos comunes entre varias partes de la aplicación (similares en modelo a los Dedicated Workers, pero con alcance compartido) (Krauweel & Jongmans, 2017).
 ></div>  
 
-### 9\.4 Service Workers
+### 9\.2\.3 Service Workers
 ><div align="justify">
 >Los Service Workers son especializados: actúan como intermediarios entre la aplicación web, el navegador y la red. Funcionan en segundo plano incluso cuando la página está cerrada, gestionan el cacheado de recursos, permiten que la aplicación funcione offline y habilitan funciones como notificaciones push. Son fundamentales en el desarrollo de Progressive Web Apps (PWA) (Wikipedia, 2025; Krauweel & Jongmans, 2017).
 ></div> 
@@ -35,7 +35,7 @@ En otras palabras, un Web Worker funciona como un “trabajador” independiente
   </span>
 </div>
 
-## 9\.5 Características principales de los Web Workers
+## 9\.3 Características principales de los Web Workers
 - **Ejecución en paralelo:**  Funcionan en hilos independientes, lo que permite procesar tareas largas sin congelar la interfaz (Simpson, 2023).
   
 - **Comunicación mediante mensajes:** La interacción con el hilo principal se realiza mediante postMessage y onmessage, lo cual es totalmente asincrónico (W3C, 2009).
@@ -44,7 +44,7 @@ En otras palabras, un Web Worker funciona como un “trabajador” independiente
 - **Acceso a APIs específicas:** Aunque no tienen acceso al DOM, pueden consultar recursos como fetch, XMLHttpRequest, IndexedDB y temporizadores (setTimeout, setInterval) (MDN, 2025).
   
 - **Política de seguridad (Same-Origin Policy):** Sólo pueden ejecutar scripts del mismo origen, para evitar riesgos de seguridad (W3C, 2009).
-## 9\.6 Beneficios de usar Web Workers 
+## 9\.4 Beneficios de usar Web Workers 
 - **Mejor rendimiento general:** Permiten aprovechar múltiples núcleos del procesador y evitar el bloqueo del hilo principal (Pajuelo & Verdú, 2016).
 - **Experiencia de usuario fluida:** Mantienen la interfaz responsiva mientras se ejecutan procesos pesados (Simpson, 2023).
 - **Eficiencia en procesamiento intensivo:** Son ideales para tareas como renderizado gráfico, análisis de datos o cálculos complejos (Simpson, 2023).
@@ -78,7 +78,7 @@ onmessage = function(e) {
 ```
 >Este ejemplo muestra cómo un Web Worker puede realizar un cálculo muy grande (suma de números hasta 1e8) sin bloquear la página. Mientras el worker procesa, el usuario puede seguir usando la interfaz y no se queda congelada. Demuestra el beneficio principal de los workers: mantener la experiencia fluida.
 
-## 9\.7 Limitaciones de los Web Workers
+## 9\.5 Limitaciones de los Web Workers
 
 <p align="justify">
 - Procesamiento de datos masivos: Ideal para análisis en el navegador en grandes volúmenes de información (Simpson, 2023).
@@ -118,7 +118,7 @@ onmessage = () => {
 ```
 >Aquí el worker calcula una suma, pero no puede cambiar el contenido del HTML directamente. En su lugar, envía el resultado al hilo principal, y este sí actualiza la página. Esto demuestra la limitación de los workers: no tienen acceso al DOM, solo pueden comunicarse mediante mensajes.
 
-## 9\.8 Casos de uso comunes
+## 9\.6 Casos de uso comunes
 Los Web Workers se aplican en situaciones donde el procesamiento intensivo es inevitable:
 
 - **Procesamiento de datos masivos:**  Ideal para análisis en el navegador en grandes volúmenes de información (Simpson, 2023).
@@ -132,7 +132,7 @@ Los Web Workers se aplican en situaciones donde el procesamiento intensivo es in
   <img src="https://web.dev/static/articles/workers-overview/image/diagram-showing-links-be-3f8d21126eb87.png" width="400">
 </p>
 
-## 9\.9 Diferencia entre Web Workers y el Main Thread
+## 9\.7 Diferencia entre Web Workers y el Main Thread
 <p align="justify">
 El Main Thread (hilo principal) es el encargado de manejar todo lo que el usuario ve y toca en la aplicación: botones, menús, animaciones y en general la interfaz gráfica. El problema es que, si en este mismo hilo se ejecutan tareas muy pesadas (como cálculos matemáticos grandes o procesar imágenes), la página puede quedarse "congelada" o lenta, ya que el navegador no logra responder a las interacciones a tiempo.
 </p>
@@ -146,38 +146,38 @@ En cambio, los Web Workers funcionan como ayudantes que trabajan en segundo plan
 
  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ46v-XvAruQJu0MJ47JttB4XDLmPi6xkEZOw&s" width="60" align="right">
  
-## ALTO RENDIMIENTO EN JAVASCRIPT
+## 10\. ALTO RENDIMIENTO EN JAVASCRIPT
 <p align="justify">
 JavaScript es un lenguaje dinámico y flexible, ampliamente adoptado para crear aplicaciones web interactivas. Sin embargo, su naturaleza hace que sea propenso a problemas de rendimiento en entornos complejos. Por ello, comprender y aplicar técnicas avanzadas de optimización es esencial para mantener aplicaciones eficientes y escalables (Vepsäläinen et al., 2024)
 </p>
 
-2. ¿Qué significa “alto rendimiento”?
+## 10\.1 ¿Qué significa “alto rendimiento”?
 
 Se refiere a lograr tiempos de carga rápidos, ejecución fluida, bajo uso de CPU/memoria y experiencia de usuario sin demoras perceptibles. Optimizar JavaScript no es solo escribir código más rápido, sino también reducir recursos utilizados y evitar cuellos de botella (Vepsäläinen et al., 2024) 
 
-3. Técnicas avanzadas de optimización
+## 10\.2 Técnicas avanzadas de optimización
    
-3.1 Eliminación de código muerto ("dead code")
+## 10.\2.\1 Eliminación de código muerto ("dead code")
 
 Muchas páginas cargan librerías o funciones que no usan realmente en producción. Según Kupoluyi et al. (2021), aproximadamente el 70 % de las funciones en una página promedio no se ejecutan y eliminarlas puede reducir hasta un 60 % el tamaño de descarga, acelerando el tiempo de carga en un 25–30 % 
 
-3.2 Optimización JIT y compilación especializada
+## 10.\2.\2 Optimización JIT y compilación especializada
 
 Al trabajar con motores JavaScript modernos, técnicas como el typed object shapes y la especialización de bloques básicos permiten reducir pruebas de tipo dinámicas e incrementar la velocidad de ejecución en alrededor de un 25 % (Chevalier-Boisvert & Feeley, 2015) 
 
-3.3 Descomposición de tareas largas
+## 10.\2.\3 Descomposición de tareas largas
 
 Dividir tareas largas en fragmentos más cortos evita bloquear el main thread. Según MDN (2025), esto mejora significativamente la fluidez de la interfaz al evitar interrupciones perceptibles durante la ejecución del código pesado 
 
-3.4 Limpieza de solicitudes y minificación
+## 10\.3 Limpieza de solicitudes y minificación
 
 Reducir el número de archivos JavaScript y minificarlos (eliminar espacio, comentarios, variables innecesarias) disminuye la latencia de carga y el procesamiento inicial con impacto directo en rendimiento (Microsoft, 2023) 
 
-3.5 Uso de analíticas y métricas de rendimiento
+## 10\.4 Uso de analíticas y métricas de rendimiento
 
 Medir es el primer paso para optimizar. Herramientas como Lighthouse y las DevTools del navegador permiten detectar qué scripts tardan más en cargar, qué funciones generan repaints o delays, y qué fragmentos conviene refactorizar (Vepsäläinen et al., 2024)
 
-4. Beneficios del alto rendimiento
+## 10\.5 Beneficios del alto rendimiento
 
 Mejora experiencia de usuario: interacciones rápidas y sin bloqueos, especialmente en dispositivos móviles o con red lenta.
 
@@ -185,7 +185,7 @@ Eficiencia de recursos: menos CPU, memoria y ancho de banda gastados.
 
 Ventaja competitiva: páginas más rápidas retienen mejor a los usuarios y mejoran métricas de negocio.
 
-5. Limitaciones y consideraciones
+## 10\.6 Limitaciones y consideraciones
 
 Complejidad técnica: aplicar técnicas como eliminación de código muerto o especialización de JIT requiere herramientas avanzadas o conocimiento profundo de compiladores y análisis estático.
 
@@ -193,21 +193,7 @@ Riesgo de errores: eliminar funciones sin pruebas exhaustivas puede romper funci
 
 Compatibilidad: algunas optimizaciones avanzadas dependen de navegadores modernos y pueden no aplicarse en todos los entornos.
 
-## 8\. Conclusión
-<p align="justify">
-Los Web Workers se han convertido en una herramienta muy útil para las aplicaciones web modernas, sobre todo cuando se necesita trabajar con procesos intensivos sin afectar la experiencia del usuario. Gracias a ellos, las páginas pueden ejecutar múltiples tareas al mismo tiempo: el usuario sigue navegando, clicando o escribiendo, mientras los cálculos pesados se realizan aparte.
-</p>
-<p align="justify">
-Aunque presentan algunas limitaciones, como no poder acceder directamente al DOM o el consumo adicional de memoria cuando se usan muchos, los beneficios superan ampliamente estos inconvenientes. Una implementación correcta permite crear aplicaciones más rápidas, responsivas y escalables, que aprovechan al máximo la capacidad de los procesadores actuales.
-</p>
-<p align="justify">
-En resumen, los Web Workers son un aliado clave para los desarrolladores que buscan mejorar tanto el rendimiento como la usabilidad de sus proyectos web, especialmente en aplicaciones que manejan datos grandes, gráficos o requieren multitarea de forma constante.
-</p>
-<p align="justify">
-El alto rendimiento en JavaScript avanzado se apoya en técnicas que van más allá de mejorar un bucle o usar async. Se trata de medir, identificar cuellos de botella y usar patrones sofisticados como eliminación de dead code, optimización de motores JIT, y fragmentación de tareas. Aunque requieren trabajo adicional, estos enfoques devuelven enormes beneficios en velocidad, experiencia y eficiencia. Aplicar estos métodos posiciona tus aplicaciones como más robustas, escalables y amigables para el usuario.
-</p>
-
-## 7\. Referencia
+## Referencia
 -	Kaluvakuri, S., & Vadiyala, V. R. (2016). Harnessing the potential of CSS: An exhaustive reference for web styling. Engineering International, 4(2), 95–110. https://doi.org/10.18034/ei.v4i2.682
 -	World Wide Web Consortium (W3C), Selectors Level 3. W3C Recommendation, 2018. [Online]. Available: https://www.w3.org/TR/selectors-3/
 -	K. J. Grant, CSS in Depth. Shelter Island, NY: Manning Publications, 2017. [Online]. Available: https://www.manning.com/books/css-in-depth
