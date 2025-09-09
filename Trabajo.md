@@ -49,7 +49,7 @@ En otras palabras, un Web Worker funciona como un “trabajador” independiente
 - **Experiencia de usuario fluida:** Mantienen la interfaz responsiva mientras se ejecutan procesos pesados (Simpson, 2023).
 - **Eficiencia en procesamiento intensivo:** Son ideales para tareas como renderizado gráfico, análisis de datos o cálculos complejos (Simpson, 2023).
 - **Optimización de recursos:** Están diseñados para encontrar el balance óptimo entre desempeño y consumo de memoria (Pajuelo & Verdú, 2016).
-                                                             <img src="https://i.ytimg.com/vi/Gcp7triXFjg/maxresdefault.jpg" width="100" align="right">
+                                                        
 #### main.js                                                 
 ```javascript
   
@@ -143,8 +143,6 @@ En cambio, los Web Workers funcionan como ayudantes que trabajan en segundo plan
 <p align="center">
   <img src="https://bitsofco.de/img/AfltGEBT6F-566.jpeg" width="400">
 </p>
-
- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ46v-XvAruQJu0MJ47JttB4XDLmPi6xkEZOw&s" width="60" align="right">
  
 ## 10\. ALTO RENDIMIENTO EN JAVASCRIPT
 <p align="justify">
@@ -152,18 +150,21 @@ JavaScript es un lenguaje dinámico y flexible, ampliamente adoptado para crear 
 </p>
 
 ## 10\.1 ¿Qué significa “alto rendimiento”?
-
+<p align="justify">
 Se refiere a lograr tiempos de carga rápidos, ejecución fluida, bajo uso de CPU/memoria y experiencia de usuario sin demoras perceptibles. Optimizar JavaScript no es solo escribir código más rápido, sino también reducir recursos utilizados y evitar cuellos de botella (Vepsäläinen et al., 2024) 
+</p>
 
 ## 10\.2 Técnicas avanzadas de optimización
    
 ## 10\.2\.1 Eliminación de código muerto ("dead code")
-
+<p align="justify">
 Muchas páginas cargan librerías o funciones que no usan realmente en producción. Según Kupoluyi et al. (2021), aproximadamente el 70 % de las funciones en una página promedio no se ejecutan y eliminarlas puede reducir hasta un 60 % el tamaño de descarga, acelerando el tiempo de carga en un 25–30 % 
+</p>
 
 ## 10\.2\.2 Optimización JIT y compilación especializada
-
+<p align="justify">
 Al trabajar con motores JavaScript modernos, técnicas como el typed object shapes y la especialización de bloques básicos permiten reducir pruebas de tipo dinámicas e incrementar la velocidad de ejecución en alrededor de un 25 % (Chevalier-Boisvert & Feeley, 2015) 
+</p>
 
 ## 10\.2\.3 Descomposición de tareas largas
 
@@ -224,19 +225,13 @@ function saludo(n){console.log("Hola, "+n+"!")}saludo("Mundo");
 
 ```
 ## Referencia
--	Kaluvakuri, S., & Vadiyala, V. R. (2016). Harnessing the potential of CSS: An exhaustive reference for web styling. Engineering International, 4(2), 95–110. https://doi.org/10.18034/ei.v4i2.682
--	World Wide Web Consortium (W3C), Selectors Level 3. W3C Recommendation, 2018. Available: https://www.w3.org/TR/selectors-3/
--	K. J. Grant, CSS in Depth. Shelter Island, NY: Manning Publications, 2017. Available: https://www.manning.com/books/css-in-depth
--	M. Haverbeke, Eloquent JavaScript: A Modern Introduction to Programming, 3rd ed. San Francisco, CA: No Starch Press, 2018. Available: https://eloquentjavascript.net/
--	MDN Web Docs, Specificity - CSS cascade. Mozilla Developer Network, 2024. [Online]. Available: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity
--	FreeCodeCamp, What is CSS Specificity?, 2021. [Online]. Available: https://www.freecodecamp.org/news/what-is-css-specificity/
--	GeeksforGeeks, Explain the concept of specificity in CSS, 2022. [Online]. Available: https://www.geeksforgeeks.org/css/explain-the-concept-of-specificity-in-css/
--	MDN Web Docs, CSS: Unidades de medida. Mozilla Developer Network, s.f. [Online]. Available: https://developer.mozilla.org/es/docs/Web/CSS/length 
--	MDN Web Docs. (2024). Positioning in CSS. Mozilla Developer Network. https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning 
--	Jesusda. (s. f.). Introducción a CSS. Recuperado de https://www.jesusda.com/docs/ebooks/introduccion_css.pdf
--	Ventics. (s. f.). Margen y relleno en CSS. Recuperado de https://ventics.com/margen-y-relleno-en-css/ 
--	W3Schools. (s. f.). Modelo de caja en CSS. W3Schools. Recuperado de https://www-w3schools-com.translate.goog/css/css_boxmodel.asp?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc 
--	George, L. (2020, junio 10). The theory of the box model: Margin and padding explained. Hashnode. Recuperado de https://laviedegeorge.hashnode.dev/the-theory-of-the-box-model-margin-and-padding-explained-ck88j5cgx00067rs1g4b1b6v5 
--	MDN Web Docs. (s. f.). Introduction to the CSS box model. Mozilla. Recuperado de https://developer-mozilla-org.translate.goog/en-US/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=sge#:~:text=Every%20box%20is%20composed%20of,border%20edge%2C%20and%20margin%20edge 
--	Oregoom. (s. f.). CSS color. Oregoom. Recuperado de https://oregoom.com/css/color/
-
+-	Isaacs, S., & Burns, K. (2013). Web Workers. In Beginning Windows Store Application Development–HTML and JavaScript Edition. Apress. https://doi.org/10.1007/978-1-4302-5780-6_13.
+-	Krauweel, M., & Jongmans, S.-S. T. Q. (2017). Simpler Coordination of JavaScript Web Workers. In J.-M. Jacquet & M. Massink (Eds.), Coordination Models and Languages (pp. 40–58). Springer, Cham. https://doi.org/10.1007/978-3-319-59746-1_3.
+-	Pajuelo, M. A., & Verdú, J. (2016). Performance scalability analysis of JavaScript applications with web workers. IEEE Computer Architecture Letters, 15(2), 105–108. https://doi.org/10.1109/LCA.2015.2494585.
+-	Simpson, J. (2023). Web Workers and Multithreading. In How JavaScript Works. Apress. https://doi.org/10.1007/978-1-4842-9738-4_14.
+-	W3C. (2009). Web Workers W3C Working Draft 22 December 2009. World Wide Web Consortium..
+-	MDN Contributors. (2025). Usando Web Workers. Mozilla Developer Network (MDN). Retrieved from MDN Web Workers documentation.
+-	Kupoluyi, T., Chaqfeh, M., Varvello, M., Hashmi, W., Subramanian, L., & Zaki, Y. (2021). Muzeel: A dynamic JavaScript analyzer for dead code elimination in today's web. arXiv preprint arXiv:2106.08948. https://doi.org/10.48550/arXiv.2106.08948.
+-	Vepsäläinen, J., Hellas, A., & Vuorimaa, P. (2024). Overview of web application performance optimization techniques. In A. Ojala, & R. Heikkilä (Eds.), Digital Business Platforms: Trends and Challenges (pp. 32–49). Springer. https://doi.org/10.1007/978-3-031-89621-7_3.
+-	Chevalier-Boisvert, M., & Feeley, M. (2015). Extending basic block versioning with typed object shapes. arXiv preprint arXiv:1507.02437. https://arxiv.org/abs/1507.02437.
+-	Microsoft. (2023). Rendimiento y patrones de JavaScript. Microsoft Docs. https://learn.microsoft.com/es-es/microsoft-edge/devtools-guide-chromium/javascript.
