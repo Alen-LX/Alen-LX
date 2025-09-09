@@ -157,15 +157,15 @@ Se refiere a lograr tiempos de carga rápidos, ejecución fluida, bajo uso de CP
 
 ## 10\.2 Técnicas avanzadas de optimización
    
-## 10.\2.\1 Eliminación de código muerto ("dead code")
+## 10\.2\.1 Eliminación de código muerto ("dead code")
 
 Muchas páginas cargan librerías o funciones que no usan realmente en producción. Según Kupoluyi et al. (2021), aproximadamente el 70 % de las funciones en una página promedio no se ejecutan y eliminarlas puede reducir hasta un 60 % el tamaño de descarga, acelerando el tiempo de carga en un 25–30 % 
 
-## 10.\2.\2 Optimización JIT y compilación especializada
+## 10\.2\.2 Optimización JIT y compilación especializada
 
 Al trabajar con motores JavaScript modernos, técnicas como el typed object shapes y la especialización de bloques básicos permiten reducir pruebas de tipo dinámicas e incrementar la velocidad de ejecución en alrededor de un 25 % (Chevalier-Boisvert & Feeley, 2015) 
 
-## 10.\2.\3 Descomposición de tareas largas
+## 10\.2\.3 Descomposición de tareas largas
 
 Dividir tareas largas en fragmentos más cortos evita bloquear el main thread. Según MDN (2025), esto mejora significativamente la fluidez de la interfaz al evitar interrupciones perceptibles durante la ejecución del código pesado 
 
@@ -179,25 +179,55 @@ Medir es el primer paso para optimizar. Herramientas como Lighthouse y las DevTo
 
 ## 10\.5 Beneficios del alto rendimiento
 
-Mejora experiencia de usuario: interacciones rápidas y sin bloqueos, especialmente en dispositivos móviles o con red lenta.
+- Mejora experiencia de usuario: interacciones rápidas y sin bloqueos, especialmente en dispositivos móviles o con red lenta.
 
-Eficiencia de recursos: menos CPU, memoria y ancho de banda gastados.
+- Eficiencia de recursos: menos CPU, memoria y ancho de banda gastados.
 
-Ventaja competitiva: páginas más rápidas retienen mejor a los usuarios y mejoran métricas de negocio.
+- Ventaja competitiva: páginas más rápidas retienen mejor a los usuarios y mejoran métricas de negocio.
 
 ## 10\.6 Limitaciones y consideraciones
 
-Complejidad técnica: aplicar técnicas como eliminación de código muerto o especialización de JIT requiere herramientas avanzadas o conocimiento profundo de compiladores y análisis estático.
+- **Complejidad técnica:** aplicar técnicas como eliminación de código muerto o especialización de JIT requiere herramientas avanzadas o conocimiento profundo de compiladores y análisis estático.
 
-Riesgo de errores: eliminar funciones sin pruebas exhaustivas puede romper funcionalidades invisibles.
+- **Riesgo de errores:** eliminar funciones sin pruebas exhaustivas puede romper funcionalidades invisibles.
 
-Compatibilidad: algunas optimizaciones avanzadas dependen de navegadores modernos y pueden no aplicarse en todos los entornos.
+- **Compatibilidad:** algunas optimizaciones avanzadas dependen de navegadores modernos y pueden no aplicarse en todos los entornos.
+  
+#### Ejemplo 1.js
+```javascript
+function suma(a, b) {
+  return a + b;
+}
+function resta(a, b) {   // 👈 nunca se usa
+  return a - b;
+}
+console.log(suma(5, 3));
+```
+#### Se elimina la función sin uso
+```javascript
+function suma(a, b) {
+  return a + b;
+}
+console.log(suma(5, 3));
+```
+#### Ejemplo 2.js
+```javascript
+function saludo(nombre) {
+  console.log("Hola, " + nombre + "!");
+}
+saludo("Mundo");
 
+```
+#### Minificación
+```javascript
+function saludo(n){console.log("Hola, "+n+"!")}saludo("Mundo");
+
+```
 ## Referencia
 -	Kaluvakuri, S., & Vadiyala, V. R. (2016). Harnessing the potential of CSS: An exhaustive reference for web styling. Engineering International, 4(2), 95–110. https://doi.org/10.18034/ei.v4i2.682
--	World Wide Web Consortium (W3C), Selectors Level 3. W3C Recommendation, 2018. [Online]. Available: https://www.w3.org/TR/selectors-3/
--	K. J. Grant, CSS in Depth. Shelter Island, NY: Manning Publications, 2017. [Online]. Available: https://www.manning.com/books/css-in-depth
--	M. Haverbeke, Eloquent JavaScript: A Modern Introduction to Programming, 3rd ed. San Francisco, CA: No Starch Press, 2018. [Online]. Available: https://eloquentjavascript.net/
+-	World Wide Web Consortium (W3C), Selectors Level 3. W3C Recommendation, 2018. Available: https://www.w3.org/TR/selectors-3/
+-	K. J. Grant, CSS in Depth. Shelter Island, NY: Manning Publications, 2017. Available: https://www.manning.com/books/css-in-depth
+-	M. Haverbeke, Eloquent JavaScript: A Modern Introduction to Programming, 3rd ed. San Francisco, CA: No Starch Press, 2018. Available: https://eloquentjavascript.net/
 -	MDN Web Docs, Specificity - CSS cascade. Mozilla Developer Network, 2024. [Online]. Available: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity
 -	FreeCodeCamp, What is CSS Specificity?, 2021. [Online]. Available: https://www.freecodecamp.org/news/what-is-css-specificity/
 -	GeeksforGeeks, Explain the concept of specificity in CSS, 2022. [Online]. Available: https://www.geeksforgeeks.org/css/explain-the-concept-of-specificity-in-css/
