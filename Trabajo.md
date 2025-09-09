@@ -1,9 +1,9 @@
-## WEB WORKERS EN JAVASCRIPT <img src="https://www.desarrollolibre.net/images/example///javascript/web_workers.png" width="60" align="right">
+## 9\. WEB WORKERS EN JAVASCRIPT <img src="https://www.desarrollolibre.net/images/example///javascript/web_workers.png" width="60" align="right">
 <p align="justify">
 JavaScript es un lenguaje monohilo, lo que implica que todas sus operaciones se ejecutan en un solo hilo (el hilo principal), lo cual puede causar bloqueos en la interfaz de usuario cuando se realizan tareas intensivas. Para optimizar el rendimiento y evitar estas interrupciones, se introdujo la API de Web Workers, que permite ejecutar scripts en hilos separados. Esto permite que tareas pesadas se realicen en segundo plano sin afectar la interacción con el usuario (Simpson, 2023; Pajuelo & Verdú, 2016).
-</p> 
+</p>  
 
-## 1\. ¿Qué son los Web Workers?
+## 9\.1 ¿Qué son los Web Workers?
 <p align="justify">
 Los Web Workers son scripts de JavaScript que se ejecutan en segundo plano, de manera independiente del hilo principal y sin acceso directo al DOM ni a las variables del contexto global. Su objetivo principal es realizar tareas computacionalmente costosas sin afectar el rendimiento de la interfaz (W3C, 2009; Isaacs & Burns, 2013).
 </p>
@@ -11,18 +11,18 @@ Los Web Workers son scripts de JavaScript que se ejecutan en segundo plano, de m
 En otras palabras, un Web Worker funciona como un “trabajador” independiente que recibe instrucciones, realiza su tarea y devuelve los resultados, mientras el hilo principal sigue atendiendo a la interfaz.
 </p> 
 
-## 2\. Tipos de Web Workers  
-### 2\.1 Dedicated Workers
+## 9\.2 Tipos de Web Workers  
+### 9\.2\.1 Dedicated Workers
 ><div align="justify">
 >Los Dedicated Workers son aquellos que están vinculados a una única página o script. Una vez que la página se cierra, el worker también finaliza. Son ideales       para tareas exclusivas de una sola aplicación y ayudan a mantener separadas las operaciones intensivas del hilo principal (Isaacs & Burns, 2013).
 ></div>  
 
-### 2\.2 Shared Worker
+### 9\.3 Shared Worker
 ><div align="justify">
 >Los Shared Workers permiten que múltiples contextos (pestañas, iframes o scripts) del mismo origen compartan un único worker. Esto es útil para coordenar datos o procesos comunes entre varias partes de la aplicación (similares en modelo a los Dedicated Workers, pero con alcance compartido) (Krauweel & Jongmans, 2017).
 ></div>  
 
-### 2\.3 Service Workers
+### 9\.4 Service Workers
 ><div align="justify">
 >Los Service Workers son especializados: actúan como intermediarios entre la aplicación web, el navegador y la red. Funcionan en segundo plano incluso cuando la página está cerrada, gestionan el cacheado de recursos, permiten que la aplicación funcione offline y habilitan funciones como notificaciones push. Son fundamentales en el desarrollo de Progressive Web Apps (PWA) (Wikipedia, 2025; Krauweel & Jongmans, 2017).
 ></div> 
@@ -35,7 +35,7 @@ En otras palabras, un Web Worker funciona como un “trabajador” independiente
   </span>
 </div>
 
-## 3\. Características principales de los Web Workers
+## 9\.5 Características principales de los Web Workers
 - **Ejecución en paralelo:**  Funcionan en hilos independientes, lo que permite procesar tareas largas sin congelar la interfaz (Simpson, 2023).
   
 - **Comunicación mediante mensajes:** La interacción con el hilo principal se realiza mediante postMessage y onmessage, lo cual es totalmente asincrónico (W3C, 2009).
@@ -44,13 +44,13 @@ En otras palabras, un Web Worker funciona como un “trabajador” independiente
 - **Acceso a APIs específicas:** Aunque no tienen acceso al DOM, pueden consultar recursos como fetch, XMLHttpRequest, IndexedDB y temporizadores (setTimeout, setInterval) (MDN, 2025).
   
 - **Política de seguridad (Same-Origin Policy):** Sólo pueden ejecutar scripts del mismo origen, para evitar riesgos de seguridad (W3C, 2009).
-## 4\. Beneficios de usar Web Workers 
+## 9\.6 Beneficios de usar Web Workers 
 - **Mejor rendimiento general:** Permiten aprovechar múltiples núcleos del procesador y evitar el bloqueo del hilo principal (Pajuelo & Verdú, 2016).
 - **Experiencia de usuario fluida:** Mantienen la interfaz responsiva mientras se ejecutan procesos pesados (Simpson, 2023).
 - **Eficiencia en procesamiento intensivo:** Son ideales para tareas como renderizado gráfico, análisis de datos o cálculos complejos (Simpson, 2023).
 - **Optimización de recursos:** Están diseñados para encontrar el balance óptimo entre desempeño y consumo de memoria (Pajuelo & Verdú, 2016).
                                                              <img src="https://i.ytimg.com/vi/Gcp7triXFjg/maxresdefault.jpg" width="100" align="right">
-#### main.js     
+#### main.js                                                 
 ```javascript
   
 const worker = new Worker("worker.js");
@@ -65,7 +65,7 @@ worker.onmessage = (e) => {
 };
 ```
 #### worker.js
-~~~
+```javascript
 onmessage = function(e) {
   if (e.data === "iniciar") {
     let suma = 0;
@@ -75,10 +75,10 @@ onmessage = function(e) {
     postMessage(suma);
   }
 };
-~~~
+```
 >Este ejemplo muestra cómo un Web Worker puede realizar un cálculo muy grande (suma de números hasta 1e8) sin bloquear la página. Mientras el worker procesa, el usuario puede seguir usando la interfaz y no se queda congelada. Demuestra el beneficio principal de los workers: mantener la experiencia fluida.
 
-## 5\. Limitaciones de los Web Workers
+## 9\.7 Limitaciones de los Web Workers
 
 <p align="justify">
 - Procesamiento de datos masivos: Ideal para análisis en el navegador en grandes volúmenes de información (Simpson, 2023).
@@ -97,7 +97,7 @@ onmessage = function(e) {
 </p> 
     
 #### main.js
-~~~
+```javascript
 const worker = new Worker("worker2.js");
 
 worker.onmessage = (e) => {
@@ -106,19 +106,19 @@ worker.onmessage = (e) => {
 };
 
 worker.postMessage("Calcular");
-~~~
+```
 #### worker.js
-~~~
+```javascript
 onmessage = () => {
   let total = 0;
   for (let i = 0; i < 1e7; i++) total += i;
   // Si intento hacer document.getElementById() aquí → ❌ ERROR
   postMessage("Total: " + total);
 };
-~~~
+```
 >Aquí el worker calcula una suma, pero no puede cambiar el contenido del HTML directamente. En su lugar, envía el resultado al hilo principal, y este sí actualiza la página. Esto demuestra la limitación de los workers: no tienen acceso al DOM, solo pueden comunicarse mediante mensajes.
 
-## 6\. Casos de uso comunes
+## 9\.8 Casos de uso comunes
 Los Web Workers se aplican en situaciones donde el procesamiento intensivo es inevitable:
 
 - **Procesamiento de datos masivos:**  Ideal para análisis en el navegador en grandes volúmenes de información (Simpson, 2023).
@@ -132,7 +132,7 @@ Los Web Workers se aplican en situaciones donde el procesamiento intensivo es in
   <img src="https://web.dev/static/articles/workers-overview/image/diagram-showing-links-be-3f8d21126eb87.png" width="400">
 </p>
 
-## 7\. Diferencia entre Web Workers y el Main Thread
+## 9\.9 Diferencia entre Web Workers y el Main Thread
 <p align="justify">
 El Main Thread (hilo principal) es el encargado de manejar todo lo que el usuario ve y toca en la aplicación: botones, menús, animaciones y en general la interfaz gráfica. El problema es que, si en este mismo hilo se ejecutan tareas muy pesadas (como cálculos matemáticos grandes o procesar imágenes), la página puede quedarse "congelada" o lenta, ya que el navegador no logra responder a las interacciones a tiempo.
 </p>
