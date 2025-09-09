@@ -51,8 +51,8 @@ En otras palabras, un Web Worker funciona como un “trabajador” independiente
 - **Optimización de recursos:** Están diseñados para encontrar el balance óptimo entre desempeño y consumo de memoria (Pajuelo & Verdú, 2016).
                                                              <img src="https://i.ytimg.com/vi/Gcp7triXFjg/maxresdefault.jpg" width="100" align="right">
 #### main.js     
-~~~
-  // Creamos el worker
+```javascript
+  
 const worker = new Worker("worker.js");
 
 document.getElementById("btnStart").onclick = () => {
@@ -63,7 +63,7 @@ document.getElementById("btnStart").onclick = () => {
 worker.onmessage = (e) => {
   document.getElementById("status").textContent = "Resultado: " + e.data;
 };
-~~~
+```
 #### worker.js
 ~~~
 onmessage = function(e) {
